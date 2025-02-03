@@ -18,6 +18,12 @@ class Stack:
         """Конструктор класса Stack"""
         self.top = None
 
+    def __str__(self):
+        if self.top is None:
+            return ""
+        else:
+            return "Not Empty"
+
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека
@@ -34,7 +40,7 @@ class Stack:
         :return: данные удаленного элемента
         """
         if self.top is None:
-            return None
+            raise IndexError("Cannot pop from an empty stack")  # Добавили обработку пустого стека
 
         data = self.top.data
         self.top = self.top.next_node
