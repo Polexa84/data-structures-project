@@ -27,6 +27,15 @@ class StackTest(unittest.TestCase):
         self.assertEqual(stack.top.next_node.data,15)
         self.assertEqual(stack.top.next_node.next_node.data,10)
 
+    def test_str_empty(self):
+        self.assertEqual(str(Stack()), "")
+
+    def test_str_not_empty(self):
+        stack = Stack()
+        stack.push(10)
+        self.assertEqual(str(stack), "Not Empty")
+
+
 
 
 
